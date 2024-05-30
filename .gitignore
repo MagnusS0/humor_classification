@@ -208,3 +208,4 @@ pyrightconfig.json
 data/raw/fullrjokes.json
 data/external/preprocessed.csv
 *.parquet
+*.csv
