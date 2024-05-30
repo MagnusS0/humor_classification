@@ -51,7 +51,9 @@ def formatting_prompts_func(examples):
     return {"text": texts}
 
 # Load the data
-data = pd.read_parquet("./humor_classification/data/processed/pretraining_data.parquet")
+data = pd.read_csv("../data/interim/ready_for_model.csv")
+data = data[['joke_new', 'score_class']]
+data = data.rename(columns = {'joke_new': 'text', 'score_class': 'label'})
 
 # Subsample to test the code
 data = data.sample(frac=0.3, random_state=42)
